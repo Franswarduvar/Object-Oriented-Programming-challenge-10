@@ -18,7 +18,7 @@ inquirer.prompt([{
     message:'What is the managers name?',
 },{
     type:'input',
-    name:'ManagerId',
+    name:'ManagerID',
     message:'What is the managers ID?',
 },{
     type:'input',
