@@ -10,24 +10,34 @@ function generateTeam(team){
         <h2 class="card-title">${manager.getOfficeNumber()}</h2>
         `
     }
-    // function generateEngineer(engineer){
-
-    // }
-    // function generateInterm(intern){
-
-    // }
+     function generateEngineer(engineer){
+        return`
+        <h1 class="card-title">${engineer.getName()}</h1>
+        <h1 class="card-title">${engineer.getId()}</h1>
+        <h1 class="card-title">${engineer.getEmail()}</h1>
+        
+        `
+     }
+    function generateIntern(intern){
+        return`
+        <h3 class="card-title">${intern.getName()}</h3>
+        <h3 class="card-title">${intern.getId()}</h3>
+        <h3 class="card-title">${intern.getEmail()}</h3>
+        
+        `
+     }
     const html = [];
     html.push(team
         .filter(employee => employee.getRole()==="Manager")
         .map(manager=> generateManager(manager)));
-    //  html.push(team
-    //         .filter(employee => employee.getRole()==="Engineer")
-    //         .map(engineer=> generateEngineer(engineer))
-    //         .join(''));
-    //         html.push(team
-    //             .filter(employee => employee.getRole()==="Intern")
-    //             .map(intern=> generateIntern(intern))
-    //             .join(''));
+     html.push(team
+            .filter(employee => employee.getRole()==="Engineer")
+            .map(engineer=> generateEngineer(engineer))
+            .join(''));
+            html.push(team
+                .filter(employee => employee.getRole()==="Intern")
+                .map(intern=> generateIntern(intern))
+                .join(''));
                 return html.join('');
 }
 
